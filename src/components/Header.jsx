@@ -1,8 +1,8 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { companyInfo, navLinks } from "../data/siteContent";
 
-function Header() {
+function Header({ onOpenAuth = () => {} }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -14,6 +14,11 @@ function Header() {
   }, []);
 
   const closeMenu = () => setMenuOpen(false);
+
+  const handleAuthOpen = (mode) => {
+    closeMenu();
+    onOpenAuth(mode);
+  };
 
   return (
     <header
@@ -40,7 +45,7 @@ function Header() {
             </div>
           </a>
 
-          <nav className="hidden items-center space-x-8 md:flex">
+          <nav className="hidden items-center space-x-4 md:flex lg:space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -50,6 +55,13 @@ function Header() {
                 {link.name}
               </a>
             ))}
+            <button
+              type="button"
+              onClick={() => handleAuthOpen("login")}
+              className="inline-flex items-center justify-center rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:border-teal-600 hover:text-teal-600"
+            >
+              Login
+            </button>
             <a
               href="#contact"
               className="inline-flex items-center justify-center rounded-md bg-teal-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-teal-700"
@@ -80,6 +92,13 @@ function Header() {
                   {link.name}
                 </a>
               ))}
+              <button
+                type="button"
+                onClick={() => handleAuthOpen("login")}
+                className="inline-flex w-full items-center justify-center rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:border-teal-600 hover:text-teal-600"
+              >
+                Login
+              </button>
               <a
                 href="#contact"
                 className="inline-flex w-full items-center justify-center rounded-md bg-teal-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-teal-700"
@@ -96,4 +115,3 @@ function Header() {
 }
 
 export default Header;
-

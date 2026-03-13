@@ -3,7 +3,7 @@ import { expertiseAreas } from "../data/siteContent";
 
 function ExpertiseSection() {
   return (
-    <section id="expertise" className="bg-slate-50 py-24">
+    <section id="expertise" className="bg-slate-50 py-20 flex justify-center">
       <div className="container px-4 sm:px-6 lg:px-8">
         <Reveal className="mx-auto mb-16 max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center justify-center rounded-full bg-teal-100 px-4 py-2">

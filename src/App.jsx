@@ -1,4 +1,7 @@
-﻿import AboutSection from "./components/AboutSection";
+import { useState } from "react";
+
+import AboutSection from "./components/AboutSection";
+import AuthModal from "./components/AuthModal";
 import ContactSection from "./components/ContactSection";
 import ExpertiseSection from "./components/ExpertiseSection";
 import FaqSection from "./components/FaqSection";
@@ -9,9 +12,17 @@ import OutcomesSection from "./components/OutcomesSection";
 import ServicesSection from "./components/ServicesSection";
 
 function App() {
+  const [authOpen, setAuthOpen] = useState(false);
+  const [authMode, setAuthMode] = useState("login");
+
+  const openAuth = (mode = "login") => {
+    setAuthMode(mode);
+    setAuthOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-white text-slate-900">
-      <Header />
+      <Header onOpenAuth={openAuth} />
 
       <main>
         <HeroSection />
@@ -24,6 +35,7 @@ function App() {
       </main>
 
       <Footer />
+      <AuthModal isOpen={authOpen} initialMode={authMode} onClose={() => setAuthOpen(false)} />
     </div>
   );
 }
