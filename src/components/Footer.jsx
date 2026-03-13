@@ -1,0 +1,142 @@
+﻿import React from "react";
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-gray-800 text-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+
+          <div className="lg:col-span-2">
+            <div className="flex items-center mb-6">
+              <span className="bg-white flex px-6 items-center rounded-full">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+                  <img
+                    src="/assests/images/Gaawlogo.png"
+                    alt="logo"
+                    className="h-14 w-14 object-contain"
+                  />
+                </div>
+                <span className="text-2xl font-bold text-black">Gaaw IT</span>
+              </span>
+            </div>
+
+            <p className="text-slate-400 mb-6 leading-relaxed max-w-md">
+              Transforming businesses through strategic consulting and proven
+              methodologies. Your trusted partner for sustainable growth and
+              excellence.
+            </p>
+
+            {/* Contact */}
+            <div className="space-y-3 mb-6">
+
+              <div className="flex items-center space-x-3">
+                <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2"
+                  strokeLinecap="round" strokeLinejoin="round"
+                  className="text-teal-400" viewBox="0 0 24 24">
+                  <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                </svg>
+                <a href="mailto:info@gaawit.com"
+                  className="text-slate-400 hover:text-teal-400 transition-colors">
+                  info@gaawit.com
+                </a>
+              </div>
+
+              <div className="flex items-center space-x-3">
+                <svg width="18" height="18" fill="none" stroke="currentColor"
+                  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                  className="text-teal-400" viewBox="0 0 24 24">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+                    19.79 19.79 0 0 1-8.63-3.07
+                    19.5 19.5 0 0 1-6-6
+                    19.79 19.79 0 0 1-3.07-8.67
+                    A2 2 0 0 1 4.11 2h3
+                    a2 2 0 0 1 2 1.72
+                    12.84 12.84 0 0 0 .7 2.81
+                    2 2 0 0 1-.45 2.11L8.09 9.91
+                    a16 16 0 0 0 6 6l1.27-1.27
+                    a2 2 0 0 1 2.11-.45
+                    12.84 12.84 0 0 0 2.81.7
+                    A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <a href="tel:+1234567890"
+                  className="text-slate-400 hover:text-teal-400 transition-colors">
+                  +1 (234) 567-890
+                </a>
+              </div>
+
+              <div className="flex items-center space-x-3">
+                <svg width="18" height="18" fill="none" stroke="currentColor"
+                  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                  className="text-teal-400" viewBox="0 0 24 24">
+                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799
+                    a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993
+                    4 10a8 8 0 0 1 16 0"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span className="text-slate-400">
+                  123 Pentagon tower, Karve Nagar, Pune, Maharashtra 411048
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Company Links */}
+          <div>
+            <h3 className="text-lg font-bold text-white mb-4">Company</h3>
+            <ul className="space-y-3">
+              <li><a href="#about" className="text-slate-400 hover:text-teal-400">About Us</a></li>
+              <li><a href="#team" className="text-slate-400 hover:text-teal-400">Our Team</a></li>
+              <li><a href="#" className="text-slate-400 hover:text-teal-400">Careers</a></li>
+              <li><a href="#contact" className="text-slate-400 hover:text-teal-400">Contact</a></li>
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="text-lg font-bold text-white mb-4">Services</h3>
+            <ul className="space-y-3">
+              <li><a href="#services" className="text-slate-400 hover:text-teal-400">Strategic Planning</a></li>
+              <li><a href="#services" className="text-slate-400 hover:text-teal-400">Business Transformation</a></li>
+              <li><a href="#services" className="text-slate-400 hover:text-teal-400">Operations Excellence</a></li>
+              <li><a href="#services" className="text-slate-400 hover:text-teal-400">Financial Advisory</a></li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="text-lg font-bold text-white mb-4">Resources</h3>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-slate-400 hover:text-teal-400">Case Studies</a></li>
+              <li><a href="#" className="text-slate-400 hover:text-teal-400">Blog</a></li>
+              <li><a href="#" className="text-slate-400 hover:text-teal-400">Whitepapers</a></li>
+              <li><a href="#faq" className="text-slate-400 hover:text-teal-400">FAQ</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Bottom */}
+        <div className="border-t border-slate-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-slate-400 text-sm">
+              © {currentYear} Gaaw IT. All rights reserved.
+            </p>
+
+            <div className="flex space-x-6">
+              <a href="#" className="text-slate-400 hover:text-teal-400 text-sm">Privacy Policy</a>
+              <a href="#" className="text-slate-400 hover:text-teal-400 text-sm">Terms of Service</a>
+              <a href="#" className="text-slate-400 hover:text-teal-400 text-sm">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
