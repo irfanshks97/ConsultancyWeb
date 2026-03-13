@@ -1,10 +1,11 @@
-﻿import { contactCards } from "../data/siteContent";
+﻿import Reveal from "./Reveal";
+import { contactCards } from "../data/siteContent";
 
 function ContactSection() {
   return (
     <section id="contact" className="bg-white py-24">
       <div className="container px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-16 max-w-3xl text-center">
+        <Reveal className="mx-auto mb-16 max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center justify-center rounded-full bg-teal-100 px-4 py-2">
             <span className="text-sm font-semibold text-teal-700">CONTACT US</span>
           </div>
@@ -15,13 +16,15 @@ function ContactSection() {
             Ready to hire, train candidates, or build your next digital initiative? Use the form
             or contact details below.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 lg:grid-cols-3">
           <div className="space-y-6 lg:col-span-1">
-            {contactCards.map((card) => (
-              <div
+            {contactCards.map((card, index) => (
+              <Reveal
                 key={card.title}
+                delay={index * 75}
+                y={18}
                 className="rounded-xl border border-slate-200 bg-white shadow transition-shadow hover:shadow-lg"
               >
                 <div className="p-6">
@@ -43,11 +46,11 @@ function ContactSection() {
                     <p className="font-medium text-slate-700">{card.label}</p>
                   )}
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
 
-          <div className="lg:col-span-2">
+          <Reveal delay={120} x={16} y={20} className="lg:col-span-2">
             <div className="rounded-xl border border-slate-200 bg-white shadow-lg">
               <div className="p-8">
                 <form className="space-y-6" onSubmit={(event) => event.preventDefault()}>
@@ -122,7 +125,7 @@ function ContactSection() {
                 </form>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

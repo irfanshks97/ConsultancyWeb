@@ -1,4 +1,6 @@
-﻿const Hero = () => {
+﻿import Reveal from "./Reveal";
+
+const Hero = () => {
   return (
     <section
       id="home"
@@ -19,41 +21,34 @@
               "linear-gradient(90deg, rgba(7,18,44,0.96) 0%, rgba(10,25,54,0.92) 32%, rgba(23,35,60,0.76) 68%, rgba(73,81,98,0.56) 100%)",
           }}
         />
-
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(239, 242, 248, 0.14) 0%, rgba(4,10,25,0.46) 100%)",
-          }}
-        />
-
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(circle at 84% 16%, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 30%)",
-          }}
-        />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 py-32 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          
-
-          <h1 className="mb-6 text-5xl font-bold leading-tight text-white sm:text-6xl lg:text-7xl">
-            Transform Your Business with
-            <span className="mt-2 block bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              Expert Consulting
+          <Reveal delay={60} y={16} className="inline-flex items-center space-x-2 rounded-full border border-teal-500/20 bg-teal-500/10 px-4 py-2 backdrop-blur-sm">
+            <div className="h-2 w-2 animate-pulse rounded-full bg-teal-400"></div>
+            <span className="text-sm font-medium text-teal-300">
+              Trusted by 100+ Companies Worldwide
             </span>
-          </h1>
+          </Reveal>
 
-          <p className="mb-10 max-w-2xl text-xl leading-relaxed text-white">
-            We deliver strategic solutions that drive growth, optimize operations, and
-            unlock your organization&apos;s full potential.
-          </p>
+          <Reveal delay={140} y={18} className="mt-8">
+            <h1 className="mb-6 text-5xl font-bold leading-tight text-white sm:text-6xl lg:text-6xl">
+              Transform Your Business with
+              <span className="mt-2 block bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                Expert Consulting
+              </span>
+            </h1>
+          </Reveal>
 
-          <div className="mb-10 flex flex-col space-y-3 sm:flex-row sm:items-center sm:space-x-6 sm:space-y-0 text-white">
+          <Reveal delay={230} y={18} className="max-w-2xl">
+            <p className="mb-10 text-xl leading-relaxed text-white">
+              We deliver strategic solutions that drive growth, optimize operations, and
+              unlock your organization&apos;s full potential.
+            </p>
+          </Reveal>
+
+          <Reveal delay={320} y={18} className="mb-10 flex flex-col space-y-3 text-white sm:flex-row sm:items-center sm:space-x-6 sm:space-y-0">
             <div className="flex items-center space-x-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -110,9 +105,9 @@
               </svg>
               <span className="font-medium text-slate-100">Global Reach</span>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+          <Reveal delay={410} y={16} className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
             <button className="group inline-flex h-10 items-center justify-center gap-2 rounded-md bg-teal-600 px-8 py-6 text-lg font-medium text-white shadow transition-colors hover:bg-teal-700">
               Get Started
               <svg
@@ -135,7 +130,7 @@
             <button className="inline-flex h-10 items-center justify-center rounded-md border-2 border-white/30 px-8 py-6 text-lg font-medium text-white shadow-sm backdrop-blur-sm transition-colors hover:bg-white/10">
               Our Services
             </button>
-          </div>
+          </Reveal>
         </div>
       </div>
 

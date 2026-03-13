@@ -1,10 +1,11 @@
-﻿import { services } from "../data/siteContent";
+﻿import Reveal from "./Reveal";
+import { services } from "../data/siteContent";
 
 function ServicesSection() {
   return (
     <section id="services" className="bg-slate-50 py-24">
       <div className="container px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-16 max-w-3xl text-center">
+        <Reveal className="mx-auto mb-16 max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center justify-center rounded-full bg-teal-100 px-4 py-2">
             <span className="text-sm font-semibold text-teal-700">OUR SERVICES</span>
           </div>
@@ -15,12 +16,15 @@ function ServicesSection() {
             This structure follows the reference layout you shared, but the content is adapted
             to GAAW IT and your job consultancy plus technology services model.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <article
+          {services.map((service, index) => (
+            <Reveal
               key={service.title}
+              as="article"
+              delay={index * 80}
+              y={20}
               className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow transition-all duration-300 hover:-translate-y-1 hover:border-teal-500 hover:shadow-xl"
             >
               <div className="h-48 overflow-hidden">
@@ -41,7 +45,7 @@ function ServicesSection() {
                   {service.description}
                 </p>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

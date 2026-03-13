@@ -1,10 +1,11 @@
-﻿import { expertiseAreas } from "../data/siteContent";
+﻿import Reveal from "./Reveal";
+import { expertiseAreas } from "../data/siteContent";
 
 function ExpertiseSection() {
   return (
     <section id="expertise" className="bg-slate-50 py-24">
       <div className="container px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-16 max-w-3xl text-center">
+        <Reveal className="mx-auto mb-16 max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center justify-center rounded-full bg-teal-100 px-4 py-2">
             <span className="text-sm font-semibold text-teal-700">OUR EXPERTISE</span>
           </div>
@@ -15,12 +16,15 @@ function ExpertiseSection() {
             Instead of using fake team members, this version presents the capabilities behind the
             company in a more credible way.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {expertiseAreas.map((area) => (
-            <article
+          {expertiseAreas.map((area, index) => (
+            <Reveal
               key={area.title}
+              as="article"
+              delay={index * 85}
+              y={20}
               className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
             >
               <div className="relative h-80 overflow-hidden bg-slate-100">
@@ -38,7 +42,7 @@ function ExpertiseSection() {
                 <p className="mt-1 text-sm font-medium text-teal-600">{area.subtitle}</p>
                 <p className="mt-3 text-sm leading-relaxed text-slate-600">{area.description}</p>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

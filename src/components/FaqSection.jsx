@@ -1,5 +1,6 @@
 ﻿import { useState } from "react";
 
+import Reveal from "./Reveal";
 import { faqs } from "../data/siteContent";
 
 function FaqSection() {
@@ -9,7 +10,7 @@ function FaqSection() {
     <section id="faq" className="bg-slate-50 py-24">
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
-          <div className="lg:sticky lg:top-32">
+          <Reveal y={20} className="lg:sticky lg:top-32">
             <div className="mb-6 inline-flex items-center justify-center rounded-full bg-teal-100 px-4 py-2">
               <span className="text-sm font-semibold text-teal-700">FAQ</span>
             </div>
@@ -33,15 +34,17 @@ function FaqSection() {
                 Contact Us
               </a>
             </div>
-          </div>
+          </Reveal>
 
           <div className="space-y-4">
             {faqs.map((faq, index) => {
               const isOpen = openFaq === index;
 
               return (
-                <div
+                <Reveal
                   key={faq.question}
+                  delay={index * 75}
+                  y={18}
                   className="overflow-hidden rounded-xl border border-slate-200 bg-white transition-colors hover:border-teal-500"
                 >
                   <button
@@ -60,7 +63,7 @@ function FaqSection() {
                       {faq.answer}
                     </div>
                   )}
-                </div>
+                </Reveal>
               );
             })}
           </div>

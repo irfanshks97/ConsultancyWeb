@@ -1,5 +1,6 @@
 ﻿import { useState } from "react";
 
+import Reveal from "./Reveal";
 import { outcomes, stats } from "../data/siteContent";
 
 function OutcomesSection() {
@@ -16,7 +17,7 @@ function OutcomesSection() {
   return (
     <section className="bg-white py-24">
       <div className="container px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-16 max-w-3xl text-center">
+        <Reveal className="mx-auto mb-16 max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center justify-center rounded-full bg-teal-100 px-4 py-2">
             <span className="text-sm font-semibold text-teal-700">ENGAGEMENT OUTCOMES</span>
           </div>
@@ -27,9 +28,9 @@ function OutcomesSection() {
             This section takes the place of a generic testimonial carousel and keeps the same
             polished presentation style from your reference site.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="relative mx-auto max-w-5xl">
+        <Reveal delay={90} y={20} className="relative mx-auto max-w-5xl">
           <div className="overflow-hidden rounded-xl border border-slate-200 shadow-xl">
             <div className="p-12 md:p-16">
               <div className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-500 text-3xl font-bold text-white">
@@ -77,14 +78,14 @@ function OutcomesSection() {
               {">"}
             </button>
           </div>
-        </div>
+        </Reveal>
 
         <div className="mx-auto mt-20 grid max-w-4xl grid-cols-2 gap-8 md:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
+          {stats.map((stat, index) => (
+            <Reveal key={stat.label} delay={160 + index * 75} y={16} className="text-center">
               <div className="mb-2 text-4xl font-bold text-slate-900">{stat.value}</div>
               <div className="text-slate-600">{stat.label}</div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
