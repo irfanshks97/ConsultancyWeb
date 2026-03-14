@@ -15,7 +15,7 @@ function OutcomesSection() {
   };
 
   return (
-    <section className="bg-white py-24">
+    <section className="bg-slate-50 py-24">
       <div className="container px-4 sm:px-6 lg:px-8">
         <Reveal className="mx-auto mb-16 max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center justify-center rounded-full bg-teal-100 px-4 py-2">
@@ -31,7 +31,7 @@ function OutcomesSection() {
         </Reveal>
 
         <Reveal delay={90} y={20} className="relative mx-auto max-w-5xl">
-          <div className="overflow-hidden rounded-xl border border-slate-200 shadow-xl">
+          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl">
             <div className="p-12 md:p-16">
               <div className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-500 text-3xl font-bold text-white">
                 "
@@ -45,7 +45,7 @@ function OutcomesSection() {
 
               <div className="text-center">
                 <p className="text-xl font-bold text-slate-900">{outcomes[activeOutcome].title}</p>
-                <p className="mt-2 text-teal-600">GAAW IT engagement focus</p>
+                <p className="mt-2 text-teal-600">GaawIT engagement focus</p>
               </div>
             </div>
           </div>

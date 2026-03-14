@@ -10,20 +10,10 @@ function AboutSection() {
             <div className="mb-6 inline-flex items-center justify-center rounded-full bg-teal-100 px-4 py-2">
               <span className="text-sm font-semibold text-teal-700">ABOUT US</span>
             </div>
-            <h2 className="text-4xl font-bold text-slate-900 sm:text-5xl">
+            <h2 className="text-4xl font-bold text-slate-900 sm:text-5xl mb-8">
               A consultancy model that connects technology services with real employment support
             </h2>
-            <p className="mb-6 mt-6 text-lg leading-relaxed text-slate-600">
-              GAAW IT combines Generative AI, data annotation, computer vision, software
-              development, Android app delivery, digital marketing, training, and job
-              consultancy into one more complete business offering.
-            </p>
-            <p className="mb-8 text-lg leading-relaxed text-slate-600">
-              The goal is not just to build systems. It is also to create a stronger pathway for
-              businesses that need talent and candidates who need training, preparation, and
-              career opportunities.
-            </p>
-
+        
             <div className="space-y-4">
               {aboutPoints.map((point, index) => (
                 <Reveal key={point} delay={120 + index * 70} y={14} className="flex items-start space-x-3">

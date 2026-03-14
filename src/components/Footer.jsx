@@ -18,7 +18,7 @@ const Footer = () => {
                     className="h-14 w-14 object-contain"
                   />
                 </div>
-                <span className="text-2xl font-bold text-black">Gaaw IT</span>
+                <span className="text-2xl font-bold text-black">GaawIT</span>
               </span>
             </div>
 
@@ -61,9 +61,9 @@ const Footer = () => {
                     12.84 12.84 0 0 0 2.81.7
                     A2 2 0 0 1 22 16.92z"></path>
                 </svg>
-                <a href="tel:+1234567890"
+                <a href="tel:+918855817680"
                   className="text-slate-400 hover:text-teal-400 transition-colors">
-                  +1 (234) 567-890
+                  +91 8855817680
                 </a>
               </div>
 
@@ -77,7 +77,7 @@ const Footer = () => {
                   <circle cx="12" cy="10" r="3"></circle>
                 </svg>
                 <span className="text-slate-400">
-                  123 Pentagon tower, Karve Nagar, Pune, Maharashtra 411048
+                  Shop no.3, Lane No. 1, near Cummins College Road, Sahu Colony, Karvenagar, Pune, Maharashtra
                 </span>
               </div>
 
@@ -116,8 +116,8 @@ const Footer = () => {
             <h3 className="text-lg font-bold text-white mb-4">Company</h3>
             <ul className="space-y-3">
               <li><a href="#about" className="text-slate-400 hover:text-teal-400">About Us</a></li>
-              <li><a href="#team" className="text-slate-400 hover:text-teal-400">Our Team</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-teal-400">Careers</a></li>
+              <li><a href="#why-us" className="text-slate-400 hover:text-teal-400">Why Choose Us</a></li>
+              <li><a href="#career" className="text-slate-400 hover:text-teal-400">Career Support</a></li>
               <li><a href="#contact" className="text-slate-400 hover:text-teal-400">Contact</a></li>
             </ul>
           </div>
@@ -126,10 +126,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold text-white mb-4">Services</h3>
             <ul className="space-y-3">
-              <li><a href="#services" className="text-slate-400 hover:text-teal-400">Strategic Planning</a></li>
-              <li><a href="#services" className="text-slate-400 hover:text-teal-400">Business Transformation</a></li>
-              <li><a href="#services" className="text-slate-400 hover:text-teal-400">Operations Excellence</a></li>
-              <li><a href="#services" className="text-slate-400 hover:text-teal-400">Financial Advisory</a></li>
+              <li><a href="#services" className="text-slate-400 hover:text-teal-400">AI & Data Services</a></li>
+              <li><a href="#services" className="text-slate-400 hover:text-teal-400">Software Development</a></li>
+              <li><a href="#training" className="text-slate-400 hover:text-teal-400">Training Programs</a></li>
+              <li><a href="#career" className="text-slate-400 hover:text-teal-400">Job Consultancy</a></li>
             </ul>
           </div>
 
@@ -137,9 +137,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold text-white mb-4">Resources</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-slate-400 hover:text-teal-400">Case Studies</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-teal-400">Blog</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-teal-400">Whitepapers</a></li>
+              <li><a href="#training" className="text-slate-400 hover:text-teal-400">Training Programs</a></li>
+              <li><a href="#career" className="text-slate-400 hover:text-teal-400">Career Support</a></li>
+              <li><a href="#technologies" className="text-slate-400 hover:text-teal-400">Technologies</a></li>
+              <li><a href="#industries" className="text-slate-400 hover:text-teal-400">Industries</a></li>
               <li><a href="#faq" className="text-slate-400 hover:text-teal-400">FAQ</a></li>
             </ul>
           </div>

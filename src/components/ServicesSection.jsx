@@ -3,18 +3,17 @@ import { services } from "../data/siteContent";
 
 function ServicesSection() {
   return (
-    <section id="services" className="bg-slate-50 py-20 flex justify-center">
+    <section id="services" className="py-20 flex justify-center">
       <div className="container px-4 sm:px-6 lg:px-8">
         <Reveal className="mx-auto mb-16 max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center justify-center rounded-full bg-teal-100 px-4 py-2">
             <span className="text-sm font-semibold text-teal-700">OUR SERVICES</span>
           </div>
           <h2 className="text-4xl font-bold text-slate-900 sm:text-5xl">
-            Consultancy solutions built for hiring, delivery, and growth
+            We provide advanced Generative AI and Large Language Model services.
           </h2>
           <p className="mt-6 text-xl text-slate-600">
-            This structure follows the reference layout you shared, but the content is adapted
-            to GAAW IT and your job consultancy plus technology services model.
+            help businesses build intelligent applications and automation systems.
           </p>
         </Reveal>
 

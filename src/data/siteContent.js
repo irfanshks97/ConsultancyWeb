@@ -1,6 +1,6 @@
 ﻿export const companyInfo = {
-  name: "GAAW IT",
-  tagline: "AI and Job Consultancy",
+  name: "GaawIT",
+  tagline: "IT Consulting & AI Data Solution",
   email: "info@gaawit.com",
   website: "https://www.gaawit.com",
   websiteLabel: "www.gaawit.com",
@@ -11,6 +11,7 @@ export const navLinks = [
   { name: "Home", href: "#home" },
   { name: "Services", href: "#services" },
   { name: "About", href: "#about" },
+  { name: "Why Us", href: "#why-us" },
   { name: "Expertise", href: "#expertise" },
   { name: "FAQ", href: "#faq" },
   { name: "Contact", href: "#contact" },
@@ -73,11 +74,158 @@ export const services = [
   },
 ];
 
+export const trainingPrograms = [
+  {
+    title: "Artificial Intelligence & Data Services",
+    description:
+      "Learn the practical workflows behind modern AI delivery—data quality, annotation, evaluation, and Generative AI fundamentals for real project needs.",
+    image:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80",
+    modules: [
+      "Generative AI Fundamentals",
+      "AI Data Annotation & Data Labeling",
+      "Computer Vision Annotation",
+      "NLP Data Labeling",
+      "AI Model Evaluation",
+    ],
+  },
+  {
+    title: "Software Development Training",
+    description:
+      "Build strong backend and web foundations with clean coding habits, real API work, and engineering practices used by production teams.",
+    image:
+      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+    modules: [
+      "Java Development",
+      "Spring Boot Development",
+      "Web Development",
+      "Software Engineering Practices",
+      "API Development",
+    ],
+  },
+  {
+    title: "Mobile & Application Development",
+    description:
+      "Create product-ready mobile experiences with strong UI thinking, app architecture basics, and hands-on Android development practice.",
+    image:
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80",
+    modules: [
+      "Android App Development",
+      "UI/UX Development",
+    ],
+  },
+];
+
+export const trainingWorkflow = [
+  {
+    title: "Foundations",
+    text: "Start with the essentials—concepts, terminology, and the tools used in real teams.",
+  },
+  {
+    title: "Hands-on practice",
+    text: "Learn by doing with labs, guided exercises, and review cycles that build confidence.",
+  },
+  {
+    title: "Real-world projects",
+    text: "Turn learning into portfolio-ready work using project scenarios that match industry expectations.",
+  },
+  {
+    title: "Interview & deployment support",
+    text: "Get structured preparation and guidance to move from training into project deployments and job opportunities.",
+  },
+];
+
+export const deploymentRoles = [
+  "AI Development",
+  "Data Annotation Projects",
+  "Software Development",
+  "Web Development",
+  "AI Data Operations",
+];
+
+export const careerDevelopmentSupport = [
+  {
+    title: "Resume & Profile Building",
+    items: ["Professional Resume Preparation", "LinkedIn Profile Optimization"],
+  },
+  {
+    title: "Interview Preparation",
+    items: ["Technical Interview Preparation", "Mock Interviews", "HR Interview Training"],
+  },
+  {
+    title: "Professional Skill Development",
+    items: ["Communication Skills", "Networking Skills", "Personality Development"],
+  },
+  {
+    title: "Technical Skill Building",
+    items: [
+      "Coding Practice",
+      "Software Engineering Best Practices",
+      "Real-world Project Experience",
+    ],
+  },
+];
+
+export const technologies = [
+  "Artificial Intelligence",
+  "Machine Learning",
+  "Generative AI",
+  "Computer Vision",
+  "Java / Spring Boot",
+  "React JS",
+  "Python",
+  "Cloud Technologies",
+];
+
+export const industries = [
+  "Healthcare AI",
+  "Autonomous Driving",
+  "Agriculture Technology",
+  "Retail & E-commerce",
+  "FinTech",
+  "Smart Cities",
+  "Technology Startups",
+];
+
 export const aboutPoints = [
-  "AI, data, software, and hiring support aligned under one consultancy model.",
-  "Practical training pathways for tech and non-tech candidates entering digital roles.",
-  "Project-ready support across annotation, engineering, mobile, and business growth services.",
-  "A stronger employment mission focused on creating opportunity through technology and skill development.",
+  "GaawIT (Generative AI & Advanced Web Information Technology) is a technology and innovation company focused on delivering AI-powered solutions, software development services, and professional training programs.",
+  "We specialize in Generative AI technologies, AI data annotation, computer vision, and scalable software solutions that help businesses build intelligent digital systems.",
+  "Our approach combines advanced technology, domain expertise, and human-in-the-loop validation to ensure high-quality AI data and reliable digital products.",
+  "In addition to technology services, GaawIT is dedicated to empowering the next generation of technology professionals through industry-focused training and career development programs.",
+  "Our goal is to create a strong ecosystem where technology innovation, skill development, and employment opportunities grow together."
+];
+
+export const whyChooseUs = [
+  {
+    title: "End-to-end support, one partner",
+    text: "AI services, data operations, engineering delivery, digital growth, and career enablement under one coordinated engagement.",
+    icon: "layers",
+  },
+  {
+    title: "Quality-first execution",
+    text: "Defined checkpoints for annotation QA, evaluation workflows, testing, documentation, and review so delivery stays reliable.",
+    icon: "shield",
+  },
+  {
+    title: "Faster time-to-impact",
+    text: "Clear milestones, focused sprints, and practical prioritization that keeps outcomes moving without scope confusion.",
+    icon: "rocket",
+  },
+  {
+    title: "Hiring aligned with real delivery",
+    text: "Candidate screening, readiness, and placement support designed around what teams actually need on projects.",
+    icon: "users",
+  },
+  {
+    title: "Flexible engagement models",
+    text: "Start small with discovery, move into projects, or scale into ongoing operations depending on your needs.",
+    icon: "shuffle",
+  },
+  {
+    title: "Transparent communication",
+    text: "Weekly updates, shared status visibility, and documented handoffs so stakeholders always know what to expect.",
+    icon: "chat",
+  },
 ];
 
 export const stats = [
@@ -139,14 +287,14 @@ export const outcomes = [
 
 export const faqs = [
   {
-    question: "What kind of roles or projects can GAAW IT support?",
+    question: "What kind of roles or projects can GaawIT support?",
     answer:
       "We support AI services, data annotation, computer vision operations, software development, web development, Android development, digital marketing, and job consultancy requirements.",
   },
   {
     question: "Do you work with both companies and job seekers?",
     answer:
-      "Yes. GAAW IT is positioned to help employers hire or deploy relevant talent while also helping candidates become more interview-ready and placement-ready.",
+      "Yes. GaawIT is positioned to help employers hire or deploy relevant talent while also helping candidates become more interview-ready and placement-ready.",
   },
   {
     question: "What training areas do you currently cover?",
@@ -159,7 +307,7 @@ export const faqs = [
       "Yes. We can continue with implementation support, maintenance, digital delivery, annotation operations, and workforce enablement depending on the engagement model.",
   },
   {
-    question: "How should a client start working with GAAW IT?",
+    question: "How should a client start working with GaawIT?",
     answer:
       "The best first step is a short discovery conversation around hiring needs, service requirements, or candidate support goals so the right engagement path can be defined.",
   },

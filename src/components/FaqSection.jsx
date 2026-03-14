@@ -7,7 +7,7 @@ function FaqSection() {
   const [openFaq, setOpenFaq] = useState(0);
 
   return (
-    <section id="faq" className="bg-slate-50 py-20 flex justify-center">
+    <section id="faq" className="bg-white py-20 flex justify-center">
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
           <Reveal y={20} className="lg:sticky lg:top-32">

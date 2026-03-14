@@ -8,8 +8,12 @@ import FaqSection from "./components/FaqSection";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
-import OutcomesSection from "./components/OutcomesSection";
 import ServicesSection from "./components/ServicesSection";
+import WhyChooseUsSection from "./components/WhyChooseUsSection";
+import TrainingProgramsSection from "./components/TrainingProgramsSection";
+import CareerSupportSection from "./components/CareerSupportSection";
+import TechnologiesSection from "./components/TechnologiesSection";
+import VisionMissionSection from "./components/VisionMissionSection";
 
 function App() {
   const [authOpen, setAuthOpen] = useState(false);
@@ -26,10 +30,14 @@ function App() {
 
       <main>
         <HeroSection />
-        <ServicesSection />
         <AboutSection />
+        <VisionMissionSection />
+        <ServicesSection />
+        <CareerSupportSection />
+        <TechnologiesSection />
+        <TrainingProgramsSection />
         <ExpertiseSection />
-        <OutcomesSection />
+        <WhyChooseUsSection />
         <FaqSection />
         <ContactSection />
       </main>

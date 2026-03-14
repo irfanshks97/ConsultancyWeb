@@ -3,7 +3,7 @@ import { contactCards } from "../data/siteContent";
 
 function ContactSection() {
   return (
-    <section id="contact" className="bg-white py-20 flex justify-center">
+    <section id="contact" className="bg-slate-50 py-20 flex justify-center">
       <div className="container px-4 sm:px-6 lg:px-8">
         <Reveal className="mx-auto mb-16 max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center justify-center rounded-full bg-teal-100 px-4 py-2">
