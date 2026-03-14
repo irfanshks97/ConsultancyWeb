@@ -2,6 +2,22 @@
 import { TypeAnimation } from "react-type-animation";
 
 const Hero = () => {
+
+
+  const goToAbout = () => {
+    const section = document.getElementById("about");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const goToServices = () => {
+    const section = document.getElementById("services");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id="home"
@@ -12,7 +28,7 @@ const Hero = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              'url("https://images.pexels.com/photos/1367274/pexels-photo-1367274.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")',
+              'url("/assests/images/hero.png")',
           }}
         />
 
@@ -27,6 +43,7 @@ const Hero = () => {
 
       <div className="container relative z-10 mx-auto px-4 py-32 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
+
           <Reveal delay={140} y={18} className="mt-8">
             <h1 className="mb-6 text-5xl font-bold leading-tight text-white sm:text-6xl lg:text-6xl">
               Empowering the Future with AI
@@ -51,7 +68,10 @@ const Hero = () => {
 
           <Reveal delay={230} y={18} className="max-w-2xl">
             <p className="mb-10 text-xl leading-relaxed text-white">
-              GaawIT (Generative AI & Advanced Web Information Technology) is a technology-driven company delivering advanced solutions in Artificial Intelligence, Data Annotation, Software Development, and Digital Innovation.
+              GaawIT (Generative AI & Advanced Web Information Technology) is a
+              technology-driven company delivering advanced solutions in
+              Artificial Intelligence, Data Annotation, Software Development,
+              and Digital Innovation.
             </p>
           </Reveal>
 
@@ -97,7 +117,9 @@ const Hero = () => {
                 <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
                 <path d="m9 11 3 3L22 4"></path>
               </svg>
-              <span className="font-medium text-slate-100">Proven Results</span>
+              <span className="font-medium text-slate-100">
+                Proven Results
+              </span>
             </div>
 
             <div className="flex items-center space-x-2">
@@ -116,7 +138,9 @@ const Hero = () => {
                 <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
                 <path d="m9 11 3 3L22 4"></path>
               </svg>
-              <span className="font-medium text-slate-100">Global Reach</span>
+              <span className="font-medium text-slate-100">
+                Global Reach
+              </span>
             </div>
           </Reveal>
 
@@ -125,11 +149,16 @@ const Hero = () => {
             y={16}
             className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0"
           >
-            <button className="group inline-flex h-10 items-center justify-center gap-2 rounded-md bg-teal-600 px-8 py-6 text-lg font-medium text-white shadow transition-colors hover:bg-teal-700">
+            <button
+              onClick={goToAbout}
+              className="group inline-flex h-10 items-center justify-center gap-2 rounded-md bg-teal-600 px-8 py-6 text-lg font-medium text-white shadow transition-colors hover:bg-teal-700">
               Get Started
             </button>
 
-            <button className="inline-flex h-10 items-center justify-center rounded-md border-2 border-white/30 px-8 py-6 text-lg font-medium text-white shadow-sm backdrop-blur-sm transition-colors hover:bg-white/10">
+            <button
+              onClick={goToServices}
+              className="inline-flex h-10 items-center justify-center rounded-md border-2 border-white/30 px-8 py-6 text-lg font-medium text-white shadow-sm backdrop-blur-sm transition-colors hover:bg-white/10"
+            >
               Our Services
             </button>
           </Reveal>

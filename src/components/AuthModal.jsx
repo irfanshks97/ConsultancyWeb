@@ -5,9 +5,7 @@ function AuthModal({ isOpen, initialMode = "login", onClose }) {
   const [notice, setNotice] = useState("");
 
   useEffect(() => {
-    if (!isOpen) {
-      return undefined;
-    }
+    if (!isOpen) return;
 
     setMode(initialMode);
     setNotice("");
@@ -16,9 +14,7 @@ function AuthModal({ isOpen, initialMode = "login", onClose }) {
     document.body.style.overflow = "hidden";
 
     const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        onClose();
-      }
+      if (event.key === "Escape") onClose();
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -29,9 +25,7 @@ function AuthModal({ isOpen, initialMode = "login", onClose }) {
     };
   }, [initialMode, isOpen, onClose]);
 
-  if (!isOpen) {
-    return null;
-  }
+  if (!isOpen) return null;
 
   const isLogin = mode === "login";
 
@@ -39,134 +33,153 @@ function AuthModal({ isOpen, initialMode = "login", onClose }) {
     event.preventDefault();
     setNotice(
       isLogin
-        ? "Login form is ready. Connect it to your backend authentication to enable sign in."
-        : "Signup form is ready. Connect it to your backend to create new accounts.",
+        ? "Login form is ready. Connect it to your backend authentication."
+        : "Signup form is ready. Connect it to your backend."
     );
   };
 
   return (
     <div
-      className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/70 px-4 py-8 backdrop-blur-sm text-black"
+      className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/70 px-4 py-6 backdrop-blur-sm text-black"
       onClick={onClose}
-      role="presentation"
     >
       <div
         className="w-full max-w-md overflow-hidden rounded-[10px] bg-white shadow-2xl border"
-        onClick={(event) => event.stopPropagation()}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="auth-modal-title"
+        onClick={(e) => e.stopPropagation()}
       >
-        <div className="bg-slate-950 px-6 py-5 text-black">
+        {/* HEADER */}
+        <div className="bg-slate-950 px-6 py-4 text-black">
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal-600">
                 Welcome
               </p>
-              <h2 id="auth-modal-title" className="mt-2 text-2xl font-bold">
+
+              <h2 className="mt-1 text-xl font-bold">
                 {isLogin ? "Login to your account" : "Create your account"}
               </h2>
-              <p className="mt-2 text-sm text-slate-300">
+
+              <p className="mt-1 text-xs text-slate-300">
                 {isLogin
-                  ? "Access your dashboard, services, and candidate support updates."
-                  : "Sign up to manage hiring requests, training details, and account access."}
+                  ? "Access your dashboard and services."
+                  : "Create account to manage services."}
               </p>
             </div>
+
             <button
-              type="button"
               onClick={onClose}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-slate-300 transition-colors hover:border-teal-400 hover:text-black"
-              aria-label="Close authentication form"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-slate-300 hover:border-teal-400 hover:text-black"
             >
               X
             </button>
           </div>
         </div>
 
-
-        <div className="px-6 py-6">
-          <form className="space-y-4" onSubmit={handleSubmit}>
+        {/* FORM */}
+        <div className="px-6 py-5">
+          <form className="space-y-3" onSubmit={handleSubmit}>
+            
             {!isLogin && (
               <div>
-                <label htmlFor="signup-name" className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-1 block text-sm font-semibold text-slate-700">
                   Full name
                 </label>
                 <input
-                  id="signup-name"
                   type="text"
                   placeholder="Enter your full name"
-                  className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-slate-900 outline-none transition-colors focus:border-teal-500"
+                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none focus:border-teal-500"
                   required
                 />
               </div>
             )}
 
             <div>
-              <label htmlFor="auth-email" className="mb-2 block text-sm font-semibold text-slate-700">
+              <label className="mb-1 block text-sm font-semibold text-slate-700">
                 Email address
               </label>
               <input
-                id="auth-email"
                 type="email"
                 placeholder="Enter your email"
-                className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-slate-900 outline-none transition-colors focus:border-teal-500"
+                className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none focus:border-teal-500"
                 required
               />
             </div>
 
             {!isLogin && (
               <div>
-                <label htmlFor="signup-phone" className="mb-2 block text-sm font-semibold text-slate-700">
+                <label className="mb-1 block text-sm font-semibold text-slate-700">
                   Phone number
                 </label>
                 <input
-                  id="signup-phone"
                   type="tel"
-                  placeholder="Enter your phone number"
-                  className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-slate-900 outline-none transition-colors focus:border-teal-500"
+                  placeholder="Enter phone number"
+                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none focus:border-teal-500"
                   required
                 />
               </div>
             )}
 
+            {/* Reference fields */}
+            {!isLogin && (
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="mb-1 block text-sm font-semibold text-slate-700">
+                    Reference Number
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Ref number"
+                    className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none focus:border-teal-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-1 block text-sm font-semibold text-slate-700">
+                    Reference Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Ref name"
+                    className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none focus:border-teal-500"
+                  />
+                </div>
+              </div>
+            )}
+
             <div>
-              <label htmlFor="auth-password" className="mb-2 block text-sm font-semibold text-slate-700">
+              <label className="mb-1 block text-sm font-semibold text-slate-700">
                 Password
               </label>
               <input
-                id="auth-password"
                 type="password"
-                placeholder={isLogin ? "Enter your password" : "Create a password"}
-                className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-slate-900 outline-none transition-colors focus:border-teal-500"
+                placeholder={isLogin ? "Enter password" : "Create password"}
+                className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none focus:border-teal-500"
                 required
               />
             </div>
 
             {!isLogin && (
               <div>
-                <label
-                  htmlFor="signup-confirm-password"
-                  className="mb-2 block text-sm font-semibold text-slate-700"
-                >
+                <label className="mb-1 block text-sm font-semibold text-slate-700">
                   Confirm password
                 </label>
                 <input
-                  id="signup-confirm-password"
                   type="password"
-                  placeholder="Confirm your password"
-                  className="w-full rounded-2xl border border-slate-200 px-4 py-3 text-slate-900 outline-none transition-colors focus:border-teal-500"
+                  placeholder="Confirm password"
+                  className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none focus:border-teal-500"
                   required
                 />
               </div>
             )}
 
             {isLogin && (
-              <div className="flex items-center justify-between gap-3 text-sm">
+              <div className="flex items-center justify-between text-xs">
                 <label className="flex items-center gap-2 text-slate-600">
-                  <input type="checkbox" className="h-4 w-4 rounded border-slate-300 text-teal-600" />
+                  <input type="checkbox" className="h-3 w-3" />
                   Remember me
                 </label>
-                <button type="button" className="font-semibold text-teal-600 hover:text-teal-700">
+
+                <button className="font-semibold text-teal-600 hover:text-teal-700">
                   Forgot password?
                 </button>
               </div>
@@ -174,20 +187,21 @@ function AuthModal({ isOpen, initialMode = "login", onClose }) {
 
             <button
               type="submit"
-              className="inline-flex w-full items-center justify-center rounded-2xl bg-teal-600 px-4 py-3 text-base font-semibold text-white transition-colors hover:bg-teal-700"
+              className="w-full rounded-xl bg-teal-600 py-2.5 text-sm font-semibold text-white hover:bg-teal-700"
             >
               {isLogin ? "Login" : "Create account"}
             </button>
           </form>
 
           {notice && (
-            <p className="mt-4 rounded-2xl bg-teal-50 px-4 py-3 text-sm text-teal-700">{notice}</p>
+            <p className="mt-3 rounded-xl bg-teal-50 px-3 py-2 text-xs text-teal-700">
+              {notice}
+            </p>
           )}
 
-          <div className="mt-5 text-center text-sm text-slate-600">
+          <div className="mt-4 text-center text-xs text-slate-600">
             {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
             <button
-              type="button"
               onClick={() => {
                 setMode(isLogin ? "signup" : "login");
                 setNotice("");

@@ -77,7 +77,7 @@ const Footer = () => {
                   <circle cx="12" cy="10" r="3"></circle>
                 </svg>
                 <span className="text-slate-400">
-                  Shop no.3, Lane No. 1, near Cummins College Road, Sahu Colony, Karvenagar, Pune, Maharashtra
+                  Above Pentagon Tower, Shop no.3, youthville Hostel, Lane No. 1, near Cummins College Road, Sahu Colony, Karvenagar, Pune, Maharashtra 411052
                 </span>
               </div>
 
