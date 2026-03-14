@@ -4,7 +4,7 @@ import { aboutPoints, stats } from "../data/siteContent";
 function AboutSection() {
   return (
     <section id="about" className="bg-white py-20 flex justify-center">
-      <div className="container px-4 sm:px-6 lg:px-8">
+      <div className="px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <Reveal y={20} className="">
             <div className="mb-6 inline-flex items-center justify-center rounded-full bg-teal-100 px-4 py-2">

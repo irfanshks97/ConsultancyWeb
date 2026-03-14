@@ -41,7 +41,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 py-32 sm:px-6 lg:px-8">
+      <div className="container mx-auto md:mx-8 relative z-10 px-4 py-32 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
 
           <Reveal delay={140} y={18} className="mt-8">

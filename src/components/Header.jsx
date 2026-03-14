@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { companyInfo, navLinks } from "../data/siteContent";
+import { FiX,FiMenu } from "react-icons/fi";
 
 function Header({ onOpenAuth = () => {} }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,7 +28,7 @@ function Header({ onOpenAuth = () => {} }) {
           : "border-transparent bg-white/95 py-4 backdrop-blur"
         }`}
     >
-      <div className="container px-4 sm:px-6 lg:px-8">
+      <div className=" px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <a href="#home" className="flex items-center space-x-3">
             <div className="flex items-center justify-center rounded-lg">
@@ -50,7 +51,7 @@ function Header({ onOpenAuth = () => {} }) {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-slate-700 transition-colors hover:text-teal-600"
+                className="text-sm font-medium text-slate-700 transition-colors hover:text-teal-600 hover:underline"
               >
                 {link.name}
               </a>
@@ -66,7 +67,7 @@ function Header({ onOpenAuth = () => {} }) {
               href="#contact"
               className="inline-flex items-center justify-center rounded-md bg-teal-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-teal-700"
             >
-              Contact Us
+              Contact
             </a>
           </nav>
 
@@ -75,7 +76,7 @@ function Header({ onOpenAuth = () => {} }) {
             className="rounded-md border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 md:hidden"
             onClick={() => setMenuOpen((current) => !current)}
           >
-            {menuOpen ? "Close" : "Menu"}
+            {menuOpen ? <FiX size={20}/> : <FiMenu size={20}/>}
           </button>
         </div>
 
