@@ -52,24 +52,18 @@ const Hero = () => {
         <div className="max-w-3xl">
 
           <Reveal delay={140} y={18} className="mt-8">
-
             <h1 className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
               Empowering the Future with AI
 
-              {/* FIXED TYPING AREA */}
-              <span className="mt-3 block min-h-[70px]">
-
-                <span className="inline-block w-[420px] max-w-full whitespace-nowrap bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-
+              <span className="mt-3 block min-h-[70px] bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                <span className="inline-block">
                   {text}
                   <Cursor cursorColor="#2dd4bf" />
-
                 </span>
-
               </span>
             </h1>
-
           </Reveal>
+
 
           <Reveal delay={230} y={18} className="max-w-2xl">
             <p className="mb-10 text-xl leading-relaxed text-white">
