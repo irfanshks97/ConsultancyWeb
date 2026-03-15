@@ -1,21 +1,27 @@
 ﻿import Reveal from "./Reveal";
-import { TypeAnimation } from "react-type-animation";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 const Hero = () => {
 
+  const [text] = useTypewriter({
+    words: [
+      "Technology",
+      "Artificial Intelligence",
+      "Digital Transformation",
+      "Future Innovation",
+    ],
+    loop: true,
+    delaySpeed: 2000,
+  });
 
   const goToAbout = () => {
     const section = document.getElementById("about");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+    if (section) section.scrollIntoView({ behavior: "smooth" });
   };
 
   const goToServices = () => {
     const section = document.getElementById("services");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+    if (section) section.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -23,12 +29,12 @@ const Hero = () => {
       id="home"
       className="relative flex min-h-screen items-center overflow-hidden bg-[#101a34]"
     >
+      {/* Background */}
       <div className="absolute inset-0 z-0">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              'url("/assests/images/hero.png")',
+            backgroundImage: 'url("/assests/images/hero.png")',
           }}
         />
 
@@ -41,29 +47,28 @@ const Hero = () => {
         />
       </div>
 
+      {/* Content */}
       <div className="container mx-auto md:mx-8 relative z-10 px-4 py-32 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
 
           <Reveal delay={140} y={18} className="mt-8">
-            <h1 className="mb-6 text-5xl font-bold leading-tight text-white sm:text-6xl lg:text-6xl">
+
+            <h1 className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
               Empowering the Future with AI
-              <span className="mt-2 block bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-                <TypeAnimation
-                  sequence={[
-                    "Technology & Innovation",
-                    2000,
-                    "Artificial Intelligence",
-                    2000,
-                    "Digital Transformation",
-                    2000,
-                    "Future Technologies",
-                    2000,
-                  ]}
-                  speed={50}
-                  repeat={Infinity}
-                />
+
+              {/* FIXED TYPING AREA */}
+              <span className="mt-3 block min-h-[70px]">
+
+                <span className="inline-block w-[420px] max-w-full whitespace-nowrap bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+
+                  {text}
+                  <Cursor cursorColor="#2dd4bf" />
+
+                </span>
+
               </span>
             </h1>
+
           </Reveal>
 
           <Reveal delay={230} y={18} className="max-w-2xl">
@@ -81,66 +86,18 @@ const Hero = () => {
             className="mb-10 flex flex-col space-y-3 text-white sm:flex-row sm:items-center sm:space-x-6 sm:space-y-0"
           >
             <div className="flex items-center space-x-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-teal-400"
-              >
-                <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
-                <path d="m9 11 3 3L22 4"></path>
-              </svg>
-              <span className="font-medium text-slate-100">
-                2+ Years Experience
-              </span>
+              <span className="text-teal-400">✔</span>
+              <span className="font-medium text-slate-100">2+ Years Experience</span>
             </div>
 
             <div className="flex items-center space-x-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-teal-400"
-              >
-                <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
-                <path d="m9 11 3 3L22 4"></path>
-              </svg>
-              <span className="font-medium text-slate-100">
-                Proven Results
-              </span>
+              <span className="text-teal-400">✔</span>
+              <span className="font-medium text-slate-100">Proven Results</span>
             </div>
 
             <div className="flex items-center space-x-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-teal-400"
-              >
-                <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
-                <path d="m9 11 3 3L22 4"></path>
-              </svg>
-              <span className="font-medium text-slate-100">
-                Global Reach
-              </span>
+              <span className="text-teal-400">✔</span>
+              <span className="font-medium text-slate-100">Global Reach</span>
             </div>
           </Reveal>
 
@@ -151,17 +108,19 @@ const Hero = () => {
           >
             <button
               onClick={goToAbout}
-              className="group inline-flex h-10 items-center justify-center gap-2 rounded-md bg-teal-600 px-8 py-6 text-lg font-medium text-white shadow transition-colors hover:bg-teal-700">
+              className="inline-flex items-center justify-center rounded-md bg-teal-600 px-8 py-4 text-lg font-medium text-white shadow hover:bg-teal-700"
+            >
               Get Started
             </button>
 
             <button
               onClick={goToServices}
-              className="inline-flex h-10 items-center justify-center rounded-md border-2 border-white/30 px-8 py-6 text-lg font-medium text-white shadow-sm backdrop-blur-sm transition-colors hover:bg-white/10"
+              className="inline-flex items-center justify-center rounded-md border-2 border-white/30 px-8 py-4 text-lg font-medium text-white hover:bg-white/10"
             >
               Our Services
             </button>
           </Reveal>
+
         </div>
       </div>
 
